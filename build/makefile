@@ -9,13 +9,11 @@ VERBOSE = TRUE
 
 SDL_LIB := -lSDL2
 SDL_INCLUDE := -I/usr/include/SDL2 -D_REENTRANT
-INCLUDE := -I$(HEADERSDIR)
+INCLUDE := -I$(HEADERSDIR) -I$(SRCDIR)
 
 
-CXXFLAGS := -Wall -Wextra -O3 -c -std=c++11 $(SDL_INCLUDE) $(INCLUDE)
-LDFLAGS := $(SDL_LIB)
-
-#VPATH = $(SRCDIR)
+CXXFLAGS := -Wall -Wextra -O3 -c -std=c++11 $(SDL_INCLUDE) $(INCLUDE) -fopenmp -DNDEBUG
+LDFLAGS := $(SDL_LIB) -fopenmp
 
 EXE = NBodySimulator
 SRC = $(wildcard $(SRCDIR)/*.cpp)

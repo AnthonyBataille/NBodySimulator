@@ -166,9 +166,8 @@ class simulator():
     
     def run(self):
         anim = animation.FuncAnimation(self.fig, self.update_figure, 100, init_func = self.init_figure, interval = 1000/60, blit = True, repeat = True)
-        #raise Exception('Waiting..')
         plt.show()
         
 #if __name__ == '__main__':
-sim = simulator('solar', 2, 200, 10, 'ones', 'normal', 'uniform')
+sim = simulator('solar', 200, 200, 10, 'ones', 'normal', 'uniform')
 sim.run()
