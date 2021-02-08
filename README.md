@@ -20,6 +20,8 @@ The C++ code is equivalent to the python script with much better performances.
 
 It uses the Boost::uBLAS library for speedup in computations and SDL2 library for rendering graphics.
 
+Example of usage : `./NBodySimulator -n 2000 -f 2000 -w 600 -t 0.01`
+
 ## Required Libraries
 - libsdl2-2.0-0
 - libsdl2-dev
