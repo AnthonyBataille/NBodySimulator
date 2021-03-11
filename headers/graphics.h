@@ -6,6 +6,7 @@
 #include <SDL2/SDL.h>
 #include <chrono>
 #include <ctime>
+#include "simulator.h"
 
 using namespace boost::numeric::ublas;
 
@@ -91,7 +92,7 @@ class graphics{
 			}
 		}
 		
-		template <typename real_type> void render_point(const vector<real_type>& point_x, const vector<real_type>& point_y, const vector<real_type>& mass, const int N, const real_type flength, bool profile){
+		template <typename real_type> void render_point(const simulator<real_type>& s, bool profile){
 			std::clock_t begin;
 			if(profile){
 				begin = std::clock();
@@ -100,8 +101,8 @@ class graphics{
 			SDL_RenderClear(ren);
 			
 			SDL_SetRenderDrawColor(ren, 0x00, 0x00, 0xFF, 0xFF);
-			for(int i = 0; i < N; ++i){
-				draw_circle(ren, {int((point_x(i)/flength + 0.5)*size), int((point_y(i)/flength + 0.5)*size)}, int(sqrt(mass(i)))); // Draw every particle.
+			for(int i = 0; i < s.N; ++i){
+				draw_circle(ren, {int((s.point_x(i)/s.flength + 0.5)*size), int((s.point_y(i)/s.flength + 0.5)*size)}, int(std::sqrt(s.mass(i)))); // Draw every particle.
 			}
 			
 			SDL_RenderPresent(ren);
