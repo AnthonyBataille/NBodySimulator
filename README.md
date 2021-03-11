@@ -23,6 +23,8 @@ Default and solar system modes are also supported.
 
 Example of usage : `./NBodySimulator -n 2000 -f 2000 -w 600 -t 0.01 -s`
 
+Example of usage : `./NBodySimulator -n 2000 -f 2000 -w 600 -t 0.01`
+
 ## Required Libraries
 - libsdl2-2.0-0
 - libsdl2-dev
