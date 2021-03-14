@@ -5,7 +5,7 @@ Two particles merge if they collide.
 
 Acceleration is computed directly for each particles (no octree aproximation, possible future improvement).
 
-Integration is made with an explicit Euler scheme. Next goal: to implement a more accurate scheme.
+Integration is made with an explicit Euler scheme or a leapfrog scheme.
 
 ## Python script (draft)
 The file python/simulator.py a working but very slow version of the simulator. Usage of Numba can improve performance but doesn't seem to work on every platform. 
